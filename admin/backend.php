@@ -63,4 +63,85 @@
             header("location:member.php");
         }
     }
+
+    /* Create Category */
+    if(isset($_POST["create-category"])){
+       $name = htmlspecialchars($_POST["name"]);
+       $image = $_FILES["image"];
+       image_filter($image,"category.php");
+       $sql = "INSERT INTO category(name,image) VALUES ('$name','$unique_file_name')";
+       $result = mysqli_query($connect,$sql);
+       if($result){
+            $_SESSION["success"] = "Category Create Success";
+            header("location:category.php");
+       }else{
+            $_SESSION["error"] = "Category Create Fail";
+            header("location:category.php");
+       }
+    }
+
+    /* Delete Category */
+    if(isset($_POST["delete_category"])){
+        $id = $_POST["id"];
+        delete_data("category",$connect,$id,"category.php");
+    }
+
+
+
+    /* Functional */
+
+    /* Image Filter */
+     function image_filter($image,$location){
+        $name = $image["name"];
+        $size = $image["size"];
+        $error = $image["error"];
+        $tmp_name = $image["tmp_name"];
+        $type = $image["type"];
+        $image_upload_location = "../uploads/";
+        global $unique_file_name ;
+        $unique_file_name = rand(0,100) . "_" . $name;
+ 
+        if($error == 0){
+             if($size < 2000000){
+                 if($type == "image/png" || $type=="image/jpg" || $type =="image/jpeg" || $type == "image/gif"){
+                    move_uploaded_file($tmp_name , $image_upload_location . $unique_file_name);
+                    return $unique_file_name;
+                 }else{
+                     error_message("We only accept jpg png and gif",$location);
+                 }
+             }else{
+                 error_message("File is too big",$location);
+             }
+        }else{
+             error_message("File has error" , $location);
+        }
+ 
+     }
+
+
+    /* Success message */
+    function success_message($data,$location){
+        $_SESSION["success"] = $data;
+        header("location:$location");
+    }
+
+    /* Error message */
+    function error_message($data,$location){
+        $_SESSION["error"] = $data;
+        header("location:$location");
+        
+    }
+
+    /* Delete Data */
+    function delete_data($tabale_name,$connection_line,$column_data,$location){
+        //delete from tablename where column=columndata
+        $sql = "DELETE FROM $tabale_name WHERE id=$column_data";
+        $result = mysqli_query($connection_line,$sql);
+        if($result){
+            success_message("Delete Scccess",$location);
+            
+        }else{
+            success_message("Delete Fail",$location);
+        }
+    }
 ?>

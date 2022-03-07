@@ -20,7 +20,7 @@
           Category and Post
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"> Category and Subcategory</a> 
+          <a class="dropdown-item" href="category.php"> Category and Subcategory</a> 
           <a class="dropdown-item" href="#">Post</a>
         </div>
       </li>
