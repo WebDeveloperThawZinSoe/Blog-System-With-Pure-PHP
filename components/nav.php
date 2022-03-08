@@ -10,11 +10,11 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Posts</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-          Dropdown
+          Category
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -24,7 +24,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Contact</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

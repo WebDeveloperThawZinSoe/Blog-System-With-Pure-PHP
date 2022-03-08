@@ -56,11 +56,11 @@
                       <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                        <input onclick="return confirm('Are you sure to delete ?')" type="submit" class="btn btn-danger" name="delete_category" value="Delete">
                       </form>   
-                      <form action="update_user.php" method="POST" style="display:inline-block;margin-right:20px">
+                      <form action="update_category.php" method="POST" style="display:inline-block;margin-right:20px">
                          <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                         <input type="submit" class="btn btn-warning" name="update_user" value="Update">
+                         <input type="submit" class="btn btn-warning" name="update_category" value="Update">
                         </form>  
-                        <form action="update_user.php" method="POST" style="display:inline-block">
+                        <form action="detail_category.php" method="POST" style="display:inline-block">
                          <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                          <input type="submit" class="btn btn-info" name="category_detail" value="Detail">
                         </form>   
@@ -84,5 +84,5 @@
 </script>
 
 <?php
-    include_once "../components/footer.php";
+    include_once "footer.php";
 ?>

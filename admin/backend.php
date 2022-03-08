@@ -86,6 +86,27 @@
         delete_data("category",$connect,$id,"category.php");
     }
 
+    /* Update Category */
+    if(isset($_POST["upgrade_user"])){
+        $id = $_POST["id"];
+        $name = htmlspecialchars($_POST["name"]);
+        $image = $_FILES["image"];
+        image_filter($image,"category.php");
+        $sql = "UPDATE category SET name='$name',image='$unique_file_name' WHERE id=$id";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+             $_SESSION["success"] = "Category Update Success";
+             header("location:category.php");
+        }else{
+             $_SESSION["error"] = "Category Update Fail";
+             header("location:category.php");
+        }
+     }
+
+     /* Create Post */
+     if(isset($_POST["create-post"])){
+         
+     }
 
 
     /* Functional */
