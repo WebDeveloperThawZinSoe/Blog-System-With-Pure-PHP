@@ -17,10 +17,17 @@
           Category
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <?php
+            $sql = "SELECT * FROM category ORDER BY id DESC";
+            $result = mysqli_query($connect,$sql);
+            foreach($result as $r){
+              ?>
+ <a class="dropdown-item" href="category_detail.php?id=<?php echo $r['id'] ?>"><?php echo $r['name'] ?></a>
+              <?php
+            }
+          ?>
+         
+       
         </div>
       </li>
       <li class="nav-item">
