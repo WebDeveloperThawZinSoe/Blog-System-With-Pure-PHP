@@ -26,7 +26,14 @@
                 <br>
                 <?php
 
-$per_page = 20;
+$sql_paginate = "SELECT * FROM post_pagination";
+$result = mysqli_query($connect,$sql_paginate);
+$data ;
+foreach($result as $a){
+    $data = $a['count'];
+}
+
+$per_page = $data;
 
 
 ##echo $number_of_page;

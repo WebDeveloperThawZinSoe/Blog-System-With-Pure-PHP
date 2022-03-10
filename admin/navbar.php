@@ -28,7 +28,7 @@
         <a href="member.php" class="nav-link ">Member</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link ">Setting</a>
+        <a class="nav-link " href="config.php">Setting</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="logout.php">Logout</a>

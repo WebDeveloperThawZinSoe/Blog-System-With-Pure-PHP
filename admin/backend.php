@@ -122,6 +122,19 @@
         }
      }
 
+     /* Configure */
+     if(isset($_POST["config_pagination"])){
+        $data = htmlspecialchars($_POST["data"]);
+        $sql = "UPDATE post_pagination SET count='$data'";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "Pagination Configure Success";
+            header("location:config.php");
+        }else{
+            $_SESSION["error"] = "Pagination Configure Fail";
+            header("location:config.php");
+        }
+     }
 
     /* Functional */
 
