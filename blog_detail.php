@@ -37,6 +37,8 @@
                             $author = $value["author"];
                             $image = "uploads/" . $value['featured_image'];
                             $date = $value["create_date"];
+                            $sql = "SELECT * FROM category id=$cat";
+                            $result = mysqli_query($connect, $sql);
                            ?>
         <div class="col-lg-9 col-md-12">
          <div class="row">
@@ -52,7 +54,17 @@
                     <div class="col-md-12">
                     
                         <h1><?php echo $name; ?></h1>
-                        <strong><?php echo $date ?></strong> 
+                        
+                            <?php
+                                $sql = "SELECT * FROM category WHERE id=$cat";
+                                $r_cat = mysqli_query($connect,$sql);
+                                foreach($r_cat as $r_cat){
+                                    ?>
+ <strong> <?php echo $r_cat['name']?> | <?php echo $date ?></strong> 
+                                    <?php
+                                }
+                            ?>
+                           
                         <br>
                         <img src="<?php echo $image; ?>" class="img-reponsive " style="width: 500px; height:" alt=""> 
                         <p>
