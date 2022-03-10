@@ -104,8 +104,22 @@
      }
 
      /* Create Post */
-     if(isset($_POST["create-post"])){
-         
+     if(isset($_POST["create_post"])){
+        $title = htmlspecialchars($_POST["title"]);
+        $category = htmlspecialchars($_POST["category"]);
+        $description = $_POST["description"];
+        $author = $_SESSION["username"];
+        $image = $_FILES["image"];
+        image_filter($image,"post.php");
+        $sql = "INSERT INTO post(title,category,author,featured_image, description) VALUES ('$title','$category','$author','$unique_file_name','$description')";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "Post Create Success";
+            header("location:post.php");
+        }else{
+            $_SESSION["error"] = "Post Update Fail";
+            header("location:post.php");
+        }
      }
 
 

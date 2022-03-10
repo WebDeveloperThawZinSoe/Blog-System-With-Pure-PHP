@@ -47,11 +47,11 @@
 
   <div class="form-group">
     <label for="exampleInputEmail1">Description </label>
-    <textarea type="text" name="description" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter Title"> </textarea>
+    <textarea  id="editor" type="text" name="description" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter Title"> </textarea>
    
   </div>
 
-  <button type="submit" name="create-post" class="btn btn-primary">Create</button>
+  <button type="submit" name="create_post" class="btn btn-primary">Create</button>
 </form>
     </div>
 
@@ -59,8 +59,8 @@
     <thead style="background-color:gray">
       <tr>
         <th style="color:white">No</th>
-        <th style="color:white">Name</th>
-        <th style="color:white">Phone</th>
+        <th style="color:white">Title</th>
+        <th style="color:white">Cat</th>
         <th style="color:white">Action</th>
       </tr>
     </thead>
@@ -73,9 +73,17 @@
   
 </div>
 
-<script>
 
-</script>
+                <script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script>
 
 <?php
     include_once "footer.php";
