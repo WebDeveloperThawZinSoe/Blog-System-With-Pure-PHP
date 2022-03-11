@@ -123,6 +123,7 @@
      }
 
      /* Configure */
+     /* Pagination  */
      if(isset($_POST["config_pagination"])){
         $data = htmlspecialchars($_POST["data"]);
         $sql = "UPDATE post_pagination SET count='$data'";
@@ -134,6 +135,37 @@
             $_SESSION["error"] = "Pagination Configure Fail";
             header("location:config.php");
         }
+     }
+
+     /* Socail Media Link */
+     if(isset($_POST["create_soical_link"])){
+         $title = htmlspecialchars($_POST["title"]);
+         $image = $_FILES["image"];
+         image_filter($image,"cofig.php");
+         $link = htmlspecialchars($_POST["link"]);
+        $sql = "INSERT INTO socail_media(title,icon,link) VALUES ('$title','$unique_file_name','$link')";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "Socail Media  Configure Success";
+            header("location:config.php");
+        }else{
+            $_SESSION["error"] = "Socail Media  Configure Fail";
+            header("location:config.php");
+        }
+     }
+
+     /* Delete Social Media Link*/
+     if(isset($_POST["social_media_link_delete"])){
+         $id = $_POST["id"];
+         $sql = "DELETE FROM socail_media WHERE id=$id";
+         $result = mysqli_query($connect, $sql);
+         if($result){
+            $_SESSION["success"] = "Socail Media  Delete Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Socail Media  Delete Fail";
+            header("location:config.php");
+         }
      }
 
     /* Functional */
