@@ -121,7 +121,47 @@
     </div>
     <div id="developer" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <?php 
+          $sql = "SELECT * FROM developer_mode";
+          $result =  mysqli_query($connect,$sql);
+          if($result){
+            foreach($result as $developer_mode){
+              $client_mode = $developer_mode['client_mode'];
+              $admin_mode = $developer_mode['admin_mode'];
+              ?>
+                <?php
+                  if($client_mode == 0){
+                    ?>
+                       <span style="color:green"> Client   is on  Performance  Mode </span> <br>
+                    <?php
+                  }else if($client_mode == 1){
+                    ?>
+                    <span style="color:red"> Client   is on Developer Performance  </span>  <br>
+                  <?php
+                  }
+                ?>
+                 <?php
+                  if($admin_mode == 0){
+                    ?>
+                       <span style="color:green"> Admin   is on  Performance  Mode </span>  <br>
+                    <?php
+                  }else if($admin_mode == 1){
+                    ?>
+                    <span style="color:red"> Admin   is on Developer Performance  </span>  <br>
+                  <?php
+                  }
+                ?>
+                <form action="backend.php" method="post" >
+                   Client Mode : <input type="checkbox" name="client">
+                   <br>
+                   Developer Mode : <input type="checkbox" name="developer">
+                   <br>
+                   <input type="submit" value="Update" class="btn btn-primary" name="developer_mode">
+                </form>
+              <?php
+            }
+          }
+        ?>
       </div>
     </div>
     
@@ -137,7 +177,55 @@
     </div>
     <div id="contact" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <div class="row">
+        <div class="col-lg-6 col-md-12">
+              <?php
+                $sql = "SELECT * FROM contact_address ";
+                $result =  mysqli_query($connect,$sql);
+                if($result){
+                  foreach ($result as $contact_address){
+                    $phone = $contact_address["phone"];
+                    $email = $contact_address["email"];
+                    $address = $contact_address["address"];
+                    $map = $contact_address["map"];
+                    ?>
+                        <p>Phone : <?php echo $phone; ?></p>
+                        <p>Email : <?php echo $email; ?></p>
+                        <p>Address : <?php echo $address; ?></p>
+                        <p>
+                            <?php echo $map; ?>
+                        </p>
+                    <?php
+                  }
+                }
+              ?>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <?php
+                $sql = "SELECT * FROM contact_address";
+                $result = mysqli_query($connect, $sql);
+                if($result){
+                  foreach($result as $contact_address){
+                    ?>
+              <form action="backend.php" method="post">
+                <input type="phone" name="phone" placeholder="Phone" class="form-control" value="<?php echo $contact_address['phone']?>">
+                <br>
+                <input type="email" name="email" placeholder="Email"  class="form-control" value="<?php echo $contact_address['email']?>">
+                <br>
+                <textarea name="address" class="form-control" placeholder="Address" rows="8" ><?php echo $contact_address['address']?></textarea>
+                <br>
+                <textarea name="map" class="form-control" placeholder="Google Map" rows="8" ><?php echo $contact_address['map']?></textarea>
+                <br>
+                <input type="submit" name="update_contact_address" class="btn btn-primary" value="Update">
+              </form>
+                    <?php
+                  }
+                }
+            ?>
+
+          </div>
+        </div>
+        
       </div>
     </div>
     

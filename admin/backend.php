@@ -168,6 +168,40 @@
          }
      }
 
+     /* update_contact_address */
+     if(isset($_POST["update_contact_address"])){
+         $phone = htmlspecialchars($_POST["phone"]);
+         $email = htmlspecialchars($_POST["email"]);
+         $address = htmlspecialchars($_POST["address"]);
+         $map = $_POST["map"];
+         $sql = "UPDATE contact_address SET phone='$phone',email='$email',address='$address',map='$map' ";
+        $result = mysqli_query($connect, $sql);
+        if($result){
+            $_SESSION["success"] = "Contact Address Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Contact Address Update Fail";
+            header("location:config.php");
+         }
+     }
+
+     /* developer_mode */
+     if(isset($_POST["developer_mode"])){
+        $client = $_POST["client"];
+        $developer = $_POST["developer"];
+        $sql = "UPDATE developer_mode SET client_mode='$client',admin_mode='$developer' ";
+        $result = mysqli_query($connect,$sql);
+        echo $client ; 
+        echo $developer;
+        // if($result){
+        //     $_SESSION["success"] = "Developer Update Success";
+        //     header("location:config.php");
+        //  }else{
+        //     $_SESSION["error"] = "Developer  Update Fail";
+        //     header("location:config.php");
+        //  }
+     }
+
     /* Functional */
 
     /* Image Filter */
