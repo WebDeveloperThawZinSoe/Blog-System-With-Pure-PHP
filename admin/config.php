@@ -152,9 +152,12 @@
                   }
                 ?>
                 <form action="backend.php" method="post" >
-                   Client Mode : <input type="checkbox" name="client">
+                  <?php
+                     
+                  ?>
+                   Enable to Client on Developer Mode : <input type="checkbox" name="client" <?php if($client_mode == 1){ echo "checked"; }  ?> >
                    <br>
-                   Developer Mode : <input type="checkbox" name="developer">
+                   Enable to Admin on Developer Mode : <input type="checkbox" name="developer"  <?php if($admin_mode == 1){ echo "checked"; }  ?>>
                    <br>
                    <input type="submit" value="Update" class="btn btn-primary" name="developer_mode">
                 </form>

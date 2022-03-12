@@ -39,4 +39,24 @@ include "../backend/database.php";
 if(!isset($_SESSION["username"]) && !isset($_SESSION["password"])){
    header("location:../index.php");
 }
+
+$sql = "SELECT * FROM developer_mode";
+$result =  mysqli_query($connect,$sql);
+if($result){
+  foreach($result as $as){
+    $cleint = $as['admin_mode'];
+    if($cleint == 1){ 
+      error_reporting(1);
+      ?>
+        <p class="alert alert-danger"> Developer Mode is On  </p>
+        <script>
+          alert("Developer Mode is On");
+        </script>
+      <?php
+    }else{
+      error_reporting(0);
+    }
+    
+  }
+}
 ?>

@@ -28,5 +28,26 @@
 
 <?php
 include "backend/database.php";
+
+$sql = "SELECT * FROM developer_mode";
+$result =  mysqli_query($connect,$sql);
+if($result){
+  foreach($result as $as){
+    $cleint = $as['client_mode'];
+    if($cleint == 1){ 
+      error_reporting(1);
+      ?>
+        <p class="alert alert-danger"> Developer Mode is On  </p>
+        <script>
+          alert("Developer Mode is On");
+        </script>
+      <?php
+    }else{
+      error_reporting(0);
+    }
+    
+  }
+}
+
 ?>
     

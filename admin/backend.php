@@ -187,19 +187,17 @@
 
      /* developer_mode */
      if(isset($_POST["developer_mode"])){
-        $client = $_POST["client"];
-        $developer = $_POST["developer"];
+        $client = isset($_POST["client"]);
+        $developer = isset($_POST["developer"]) ;
         $sql = "UPDATE developer_mode SET client_mode='$client',admin_mode='$developer' ";
         $result = mysqli_query($connect,$sql);
-        echo $client ; 
-        echo $developer;
-        // if($result){
-        //     $_SESSION["success"] = "Developer Update Success";
-        //     header("location:config.php");
-        //  }else{
-        //     $_SESSION["error"] = "Developer  Update Fail";
-        //     header("location:config.php");
-        //  }
+        if($result){
+            $_SESSION["success"] = "Developer Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Developer  Update Fail";
+            header("location:config.php");
+         }
      }
 
     /* Functional */
