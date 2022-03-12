@@ -23,19 +23,68 @@
         <!-- Sweet alert 2 -->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+        <style>
+          footer{
+  color: white;
+}
+footer a{
+  color: #bfffff;
+}
+footer a:hover{
+  color: white;
+}
+
+.footer-bottom{
+  background: #3d6277;
+  padding: 2em;
+}
+.footer-top{
+  background: #2d4958;  
+}
+.footer-middle{
+   background: #3d6277;
+  padding-top: 2em;
+  color: white;
+}
+/**Sub Navigation**/
+.subnavigation-container{
+  background: #3d6277;
+}
+.subnavigation .nav-link{
+  color: white;
+  font-weight: bold;
+}
+.subnavigation-container{
+  text-align: center;
+}
+.subnavigation-container .navbar{
+  display: inline-block;
+  margin-bottom: -6px; /* Inline-block margin offffset HACK -Gilron */
+}
+.col-subnav a{
+  padding: 1rem 1rem;
+  color: white;
+  font-weight: bold;
+}
+.col-subnav .active{
+  border-top:5px solid orange;
+ background: white;
+  color: black;
+}
+        </style>
+
   </head>
 <body>
 
 <?php
 include "backend/database.php";
-
 $sql = "SELECT * FROM developer_mode";
 $result =  mysqli_query($connect,$sql);
 if($result){
   foreach($result as $as){
     $cleint = $as['client_mode'];
     if($cleint == 1){ 
-      error_reporting(1);
+      error_reporting(E_ALL);
       ?>
         <p class="alert alert-danger"> Developer Mode is On  </p>
         <script>

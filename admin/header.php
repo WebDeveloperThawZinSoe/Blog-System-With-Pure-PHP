@@ -46,7 +46,7 @@ if($result){
   foreach($result as $as){
     $cleint = $as['admin_mode'];
     if($cleint == 1){ 
-      error_reporting(1);
+      error_reporting(E_ALL);
       ?>
         <p class="alert alert-danger"> Developer Mode is On  </p>
         <script>
