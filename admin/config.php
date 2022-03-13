@@ -82,7 +82,64 @@
     </div>
     <div id="style" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <p style="text-decoration: underline;" >Front Size , Style and Color</p>
+      <form action="backend.php" method="post">
+      <?php
+          $sql = "SELECT * FROM text_style";
+          $result = mysqli_query($connect,$sql);
+          if($result){
+            foreach($result as $f){
+              $h1_color = $f['h1_style_color'];
+              $h2_color = $f['h2_style_color'];
+              $h3_color = $f['h3_style_color'];
+              $h4_color = $f['h4_style_color'];
+              $h5_color = $f['h5_style_color'];
+              $h6_color = $f['h6_style_color'];
+              $p_color = $f['p_style'];
+              $a_color = $f['a_style_color'];
+              $body_color = $f['body_style'];
+              $footer_color = $f['footer_style'];
+              ?>
+              <div class="form-group">
+                <label for="" class="col-md-2 control-label"> H1 Color <span style="color:red"> * </span> : </label>
+                <input name="h1" type="text" class="form-control" value="<?php echo $h1_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> H2 Color <span style="color:red"> * </span> : </label>
+                <input name="h2" type="text" class="form-control" value="<?php echo $h2_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> H3 Color <span style="color:red"> * </span> : </label>
+                <input name="h3" type="text" class="form-control" value="<?php echo $h3_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> H4 Color <span style="color:red"> * </span> : </label>
+                <input name="h4" type="text" class="form-control" value="<?php echo $h4_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> H5 Color <span style="color:red"> * </span> : </label>
+                <input  name="h5" type="text" class="form-control" value="<?php echo $h5_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> H6 Color <span style="color:red"> * </span> : </label>
+                <input name="h6" type="text" class="form-control" value="<?php echo $h6_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> P Color <span style="color:red"> * </span> : </label>
+                <input name="p" type="text" class="form-control" value="<?php echo $p_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> Link Color <span style="color:red"> * </span> : </label>
+                <input name="a" type="text" class="form-control" value="<?php echo $a_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> Body Backgroud Color <span style="color:red"> * </span> : </label>
+                <input name="body" type="text" class="form-control" value="<?php echo $body_color ?>" required>
+                <br>
+                <label for="" class="col-md-2 control-label"> Footer Backgroud Color <span style="color:red"> * </span> : </label>
+                <input name="footer" type="text" class="form-control" value="<?php echo $footer_color ?>" required>
+                <br>
+                <input type="submit" class="btn btn-primary"name="font_update" value="Update">
+              </div>
+               
+                
+              <?php
+            }
+          }
+      ?>
+      </form>
       </div>
     </div>
     

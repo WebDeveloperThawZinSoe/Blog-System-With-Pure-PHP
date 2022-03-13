@@ -214,6 +214,29 @@
          }
      }
 
+     /* font_update */
+     if(isset($_POST["font_update"])){
+         $h1 = htmlspecialchars($_POST["h1"]);
+         $h2 = htmlspecialchars($_POST["h2"]);
+         $h3 = htmlspecialchars($_POST["h3"]);
+         $h4 = htmlspecialchars($_POST["h4"]);
+         $h5 = htmlspecialchars($_POST["h5"]);
+         $h6 = htmlspecialchars($_POST["h6"]);
+         $p = htmlspecialchars($_POST["p"]);
+         $a = htmlspecialchars($_POST["a"]);
+         $body = htmlspecialchars($_POST["body"]);
+         $footer = htmlspecialchars($_POST["footer"]);
+         $sql = "UPDATE text_style SET h1_style_color='$h1',h2_style_color='$h2',h3_style_color='$h3',h4_style_color='$h4',h5_style_color='$h5',h6_style_color='$h6',p_style_color='$p',a_style_color='$a',p_style='$p',body_style='$body',footer_style='$footer' ";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "Style Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Style  Update Fail";
+            header("location:config.php");
+         }
+     }
+
     /* Functional */
 
     /* Image Filter */

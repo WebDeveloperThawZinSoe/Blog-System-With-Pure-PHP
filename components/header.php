@@ -1,3 +1,6 @@
+<?php
+include "backend/database.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,13 +74,55 @@ footer a:hover{
  background: white;
   color: black;
 }
+
+<?php
+  $sql = "SELECT * FROM text_style";
+  $result = mysqli_query($connect,$sql);
+  if($result){
+    foreach($result as $r){
+      ?>
+        h1{
+          color: <?php  echo $r['h1_style_color'] ?>;
+        }
+        h2{
+          color: <?php  echo $r['h2_style_color'] ?>;
+        }
+        h3{
+          color: <?php  echo $r['h3_style_color'] ?>;
+        }
+        h4{
+          color: <?php  echo $r['h4_style_color'] ?>;
+        }
+        h5{
+          color: <?php  echo $r['h5_style_color'] ?>;
+        }
+        h6{
+          color: <?php  echo $r['h6_style_color'] ?>;
+        }
+        p{
+          color: <?php  echo $r['p_style_color'] ?>;
+        }
+        a{
+          color: <?php  echo $r['a_style_color'] ?>;
+        }
+        body{
+          background-color: <?php  echo $r['body_style'] ?>;
+        }
+        footer{
+          background-color: <?php  echo $r['footer_style'] ?>;
+        }
+      <?php
+    }
+  }
+?>
+
         </style>
 
   </head>
 <body>
 
 <?php
-include "backend/database.php";
+
 $sql = "SELECT * FROM developer_mode";
 $result =  mysqli_query($connect,$sql);
 if($result){

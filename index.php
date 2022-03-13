@@ -81,7 +81,7 @@
 
          </div>
 
-         <a href="posts.php" class="btn btn-primary btn-block ">Read More</a>
+         <a href="posts.php" class="btn btn-primary btn-block ">View ALl Posts</a>
          <br> <br>
         </div>
     </div>
