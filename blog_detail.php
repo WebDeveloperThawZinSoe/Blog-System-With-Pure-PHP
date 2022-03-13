@@ -81,7 +81,8 @@
        
          <div class="row">
 
-              
+         <img src="img/leaderboard-1.png" style="margin-bottom:30px;" class="img-responisve" alt="">
+         <br> <br>
 
 
          </div>

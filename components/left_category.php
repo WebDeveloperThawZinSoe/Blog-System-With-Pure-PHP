@@ -18,4 +18,6 @@
                         }
                     }
                 ?>
+<br>
+<img src="img/300px-X-250px-AD.jpg" margin-right="10px;margin-top:30px" alt="">
                

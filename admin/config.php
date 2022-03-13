@@ -31,7 +31,7 @@
                     <form action="backend.php" method="post">
                         <input type="number" name="data" class="form-control" placeholder="">
                         <br>
-                        <input type="submit" class="btn btn-warning" name="config_pagination" value="Update">
+                        <input type="submit" class="btn btn-primary" name="config_pagination" value="Update">
                     </form>
                 </div>
             </div>

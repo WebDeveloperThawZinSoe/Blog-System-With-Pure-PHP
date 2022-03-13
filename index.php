@@ -14,9 +14,19 @@
                     include "components/left_category.php";
                 ?>
             </ul>
+            <br>
+            <br>
+           
         </div>
         <div class="col-lg-9 col-md-12">
+            <div class="col-lg-12 col-md-12">
+            <img src="img/leaderboard-1.png" style="margin-bottom:30px;" class="img-responisve" alt="">
+            </div>
+        
+        <br>
          <div class="row">
+         
+    
         <?php
                     $sql = "SELECT * FROM category ORDER BY id DESC";
                     $result = mysqli_query($connect,$sql);
