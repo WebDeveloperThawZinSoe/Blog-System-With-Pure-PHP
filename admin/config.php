@@ -107,6 +107,53 @@
             </div>
             <div id="style" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
+                <p style="text-decoration: underline;"> Color </p>
+                <?php
+                    $sql = "SELECT * FROM color";
+                    $result = mysqli_query($connect,$sql);
+                    if($result){
+                        foreach($result as $color){
+                            ?>
+                            <form action="backend.php" method="post">
+
+                                primary color : <div style="width:300px;height:30px;background-color:<?php echo $color['primary']; ?>"></div>
+                                <br>
+                                <input type="color" value="<?php echo $color['primary'] ?>"name="primary">
+                                <hr>
+
+                                secondary color : <div style="width:300px;height:30px;background-color:<?php echo $color['secondary']; ?>"></div>
+                                <br>
+                                <input type="color" value="<?php echo $color['secondary'] ?>"name="secondary">
+                                <hr>
+
+                                danger color : <div style="width:300px;height:30px;background-color:<?php echo $color['danger']; ?>"></div>
+                                <br>
+                                <input type="color" value="<?php echo $color['danger'] ?>"name="danger">
+                                <hr>
+
+                                success color : <div style="width:300px;height:30px;background-color:<?php echo $color['success']; ?>"></div>
+                                <br>
+                                <input type="color" value="<?php echo $color['success'] ?>"name="success">
+                                <hr>
+
+                                warning color : <div style="width:300px;height:30px;background-color:<?php echo $color['warning']; ?>"></div>
+                                <br>
+                                <input type="color" value="<?php echo $color['warning'] ?>"name="warning">
+                                <hr>
+
+                                info color : <div style="width:300px;height:30px;background-color:<?php echo $color['info']; ?>"></div>
+                                <br>
+                                <input type="color" value="<?php echo $color['info'] ?>"name="info">
+                                <hr>
+
+                                <input type="submit" name="color_update" class="btn btn-primary" value="Update">
+                                
+                            </form>
+                            <?php
+                        }
+                    }
+                ?>
+                    <hr>
                     <p style="text-decoration: underline;">Front Size , Style and Color</p>
                     <form action="backend.php" method="post">
                         <?php

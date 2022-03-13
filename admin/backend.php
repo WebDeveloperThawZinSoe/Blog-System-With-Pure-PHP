@@ -11,9 +11,20 @@
 ?>
 
 <?php
-    if(isset($_GET)){
-        header("location:../index.php");
+    $sql = "SELECT * FROM developer_mode";
+    $result =  mysqli_query($connect,$sql);
+    if($result){
+      foreach($result as $as){
+        $admin_mode = $as['admin_mode'];
+        if($admin_mode == 1){ 
+            if(isset($_GET)){
+                header("location:logout.php");
+            }
+          
+        }        
+      }
     }
+   
 ?>
 
 <?php
@@ -270,6 +281,29 @@
             header("location:config.php");
          }else{
             $_SESSION["error"] = "Logo  Update Fail";
+            header("location:config.php");
+         }
+    }
+
+    /* color  */
+    if(isset($_POST["color_update"])){
+
+        $primary = $_POST["primary"];
+        $secondary = $_POST["secondary"];
+        $danger = $_POST["danger"];
+        $success = $_POST["success"];
+        $warning = $_POST["warning"];
+        $info = $_POST["info"];
+        
+        $sql = "UPDATE color SET primary='$primary',secondary='$secondary',danger='$danger',success='$success',warning='$warning',info='$info' ";
+
+
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "Color Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Color  Update Fail";
             header("location:config.php");
          }
     }
