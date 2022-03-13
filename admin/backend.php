@@ -11,6 +11,12 @@
 ?>
 
 <?php
+    if(isset($_GET)){
+        header("location:../index.php");
+    }
+?>
+
+<?php
 
     /* Insert User */
 
