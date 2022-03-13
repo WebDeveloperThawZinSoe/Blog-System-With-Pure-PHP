@@ -200,6 +200,20 @@
          }
      }
 
+     /* footer_crd */
+     if(isset($_POST["footer_crd"])){
+         $name = htmlspecialchars($_POST["name"]);
+         $sql = "UPDATE footer_credit SET name='$name' ";
+         $result = mysqli_query($connect, $sql);
+         if($result){
+            $_SESSION["success"] = "Footer Credit Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Footer Credit  Update Fail";
+            header("location:config.php");
+         }
+     }
+
     /* Functional */
 
     /* Image Filter */

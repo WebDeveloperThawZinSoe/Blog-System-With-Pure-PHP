@@ -45,7 +45,30 @@
     </div>
     <div id="info" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <hr>
+         <div class="row">
+           <div class="col-md-12">
+           <p style="text-decoration: underline;" >Footer Section</p>
+         
+         <form  class="form" action="backend.php" method="post">
+         
+            <?php
+               $sql = "SELECT * FROM footer_credit";
+               $footer_crd = mysqli_query($connect,$sql);
+               if($footer_crd){
+                  foreach($footer_crd as $footer_crd){
+                    ?>
+                    <input type="text" style="width: 100" class="form-control" name="name" value="<?php echo $footer_crd['name'] ?>">
+                    <br>
+                    <input class="btn btn-primary" type="submit" name="footer_crd" value="Update">
+                    <?php
+                  }
+               }
+            ?>
+              </form>
+           </div>
+          
+         </div>
       </div>
     </div>
   </div>

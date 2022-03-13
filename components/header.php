@@ -35,20 +35,20 @@ footer a:hover{
 }
 
 .footer-bottom{
-  background: #3d6277;
+  background: #007bff;
   padding: 2em;
 }
 .footer-top{
-  background: #2d4958;  
+  background: #007bff;  
 }
 .footer-middle{
-   background: #3d6277;
+   background: #007bff;
   padding-top: 2em;
   color: white;
 }
 /**Sub Navigation**/
 .subnavigation-container{
-  background: #3d6277;
+  background: #007bff;
 }
 .subnavigation .nav-link{
   color: white;

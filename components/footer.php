@@ -80,9 +80,37 @@
   <div class="footer-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-md-6 col-xs-12">
           <!--Footer Bottom-->
-          <p class="text-xs-center">&copy; Copyright 2016 - City of USA.  All rights reserved.</p>
+          <p class="text-xs-center">
+            <?php 
+              $sql = "SELECT * FROM footer_credit";
+              $result = mysqli_query($connect,$sql);
+              if($result){
+                foreach($result as $ft){
+                  echo $ft['name'];
+                }
+              }
+            ?>
+          </p>
+        
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <!--Footer Bottom-->
+          
+         <?php
+            $sql = "SELECT * FROM socail_media ";
+            $result = mysqli_query($connect,$sql);
+            if($result){
+              foreach($result as $as){
+                ?>
+                  <a href="<?php echo $as['link'] ?>" target="_blank" style="text-decoration: none;">
+                    <img src="uploads/<?php echo $as['icon'] ?>" class="img-responsive" style="width:30px;height:30px;border-radius:100%"  alt="">
+                  </a>
+                <?php
+              }
+            }
+        ?>
         
         </div>
       </div>
