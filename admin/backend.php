@@ -237,6 +237,22 @@
          }
      }
 
+     /* SEO */
+     if(isset($_POST["seo"])){
+        $author = htmlspecialchars($_POST["author"]);
+        $description = htmlspecialchars($_POST["description"]);
+        $keywords = htmlspecialchars($_POST["keywords"]);
+        $sql = "UPDATE seo SET author='$author',description='$description',keywords='$keywords' ";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "SEO Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "SEO  Update Fail";
+            header("location:config.php");
+         }
+     }
+
     /* Functional */
 
     /* Image Filter */
