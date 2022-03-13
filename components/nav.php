@@ -1,5 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Blog</a>
+  <a class="navbar-brand" href="index.php">
+    <?php 
+      $sql = "SELECT * FROM logo";
+      $logo = mysqli_query($connect,$sql);
+      if($logo){
+         foreach($logo as $logo){
+             $logo = $logo['logo'];
+?>
+   <img src="uploads/<?php echo $logo?> " style="width:150px;height:50px" alt="">
+<?php
+         }
+      }
+    ?>
+ 
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,9 +47,8 @@
       <li class="nav-item">
         <a href="contact.php" class="nav-link ">Contact</a>
       </li>
-      <li class="nav-item">
-        <a href="feedback.php" class="nav-link ">Feedback</a>
-      </li>
+  
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

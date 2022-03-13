@@ -259,6 +259,21 @@
          }
      }
 
+    /* Logo */
+    if(isset($_POST["logo_update"])){
+        $image = $_FILES["image"];
+        image_filter($image,"config.php");
+        $sql = "UPDATE logo SET logo='$unique_file_name' ";
+        $result = mysqli_query($connect,$sql);
+        if($result){
+            $_SESSION["success"] = "Logo Update Success";
+            header("location:config.php");
+         }else{
+            $_SESSION["error"] = "Logo  Update Fail";
+            header("location:config.php");
+         }
+    }
+
     /* Functional */
 
     /* Image Filter */

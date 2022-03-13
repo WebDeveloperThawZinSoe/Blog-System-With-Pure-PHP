@@ -47,9 +47,30 @@
             </div>
             <div id="info" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    <hr>
+                    
                     <div class="row">
                         <div class="col-md-12">
+                        <p style="text-decoration: underline;">Logo <span style="color:red"> * </span> </p>
+
+                        <?php
+               $sql = "SELECT * FROM logo";
+               $logo = mysqli_query($connect,$sql);
+               if($logo){
+                  foreach($logo as $logo){
+                      $logo = $logo['logo'];
+                    ?>
+                <img src="../uploads/<?php echo $logo ?>" style="width:200px;height:200px" alt="Logo">
+                <form action="backend.php" method="post" enctype="multipart/form-data">
+                    <input required type="file" class="form-control" name="image">
+                    <br>
+                    <input type="submit" name="logo_update" class="btn btn-primary"value="Update">
+                </form>
+<?php
+                  }
+                }     
+?>
+
+<hr>
                             <p style="text-decoration: underline;">Footer Section</p>
 
                             <form class="form" action="backend.php" method="post">
