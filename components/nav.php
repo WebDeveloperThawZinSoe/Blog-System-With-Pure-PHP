@@ -31,7 +31,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Contact</a>
+        <a href="contact.php" class="nav-link ">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="feedback.php" class="nav-link ">Feedback</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
