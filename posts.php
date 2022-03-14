@@ -18,7 +18,9 @@
             </ul>
         </div>
         <div class="col-lg-9 col-md-12">
-
+        <div class="col-lg-12 col-md-12">
+            <img src="img/leaderboard-1.png" style="margin-bottom:30px;" class="img-responisve" alt="">
+            </div>
             <hr>
             <h2 style="text-decoration: underline;margin-bottom:30px">All Posts</h2>
             <div class="row">
@@ -47,7 +49,7 @@ $sql1 = "SELECT * FROM post";
 $result = mysqli_query($connect,$sql1);
 $all_data = mysqli_num_rows($result);   
                     
-$number_of_page =  ceil($all_data / $per_page);               
+$number_of_page =  ceil($all_data / $per_page);            
 $first_page_result = ($page - 1) * $per_page; //0 , 10  ,20
 $sql = "SELECT * FROM post LIMIT $first_page_result , $per_page ";
 $result = mysqli_query($connect,$sql);
