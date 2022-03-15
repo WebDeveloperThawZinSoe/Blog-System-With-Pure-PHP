@@ -308,6 +308,12 @@
          }
     }
 
+    /* Delete Post */
+    if(isset($_POST["delete_post"])){
+        $id = $_POST["id"];
+        delete_data("post",$connect,$id,"post.php");
+    }
+
     /* Functional */
 
     /* Image Filter */
