@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # Samll Content Management System 
 
