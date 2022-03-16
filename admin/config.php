@@ -29,7 +29,7 @@
                 }
           ?>
                     <form action="backend.php" method="post">
-                        <input type="number" name="data" class="form-control" placeholder="">
+                        <input required type="number" name="data" class="form-control" placeholder="">
                         <br>
                         <input type="submit" class="btn btn-primary" name="config_pagination" value="Update">
                     </form>
@@ -47,30 +47,30 @@
             </div>
             <div id="info" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    
+
                     <div class="row">
                         <div class="col-md-12">
-                        <p style="text-decoration: underline;">Logo <span style="color:red"> * </span> </p>
+                            <p style="text-decoration: underline;">Logo <span style="color:red"> * </span> </p>
 
-                        <?php
+                            <?php
                $sql = "SELECT * FROM logo";
                $logo = mysqli_query($connect,$sql);
                if($logo){
                   foreach($logo as $logo){
                       $logo = $logo['logo'];
                     ?>
-                <img src="../uploads/<?php echo $logo ?>" style="width:200px;height:200px" alt="Logo">
-                <form action="backend.php" method="post" enctype="multipart/form-data">
-                    <input required type="file" class="form-control" name="image">
-                    <br>
-                    <input type="submit" name="logo_update" class="btn btn-primary"value="Update">
-                </form>
-<?php
+                            <img src="../uploads/<?php echo $logo ?>" style="width:200px;height:200px" alt="Logo">
+                            <form action="backend.php" method="post" enctype="multipart/form-data">
+                                <input required type="file" class="form-control" name="image">
+                                <br>
+                                <input type="submit" name="logo_update" class="btn btn-primary" value="Update">
+                            </form>
+                            <?php
                   }
                 }     
 ?>
 
-<hr>
+                            <hr>
                             <p style="text-decoration: underline;">Footer Section</p>
 
                             <form class="form" action="backend.php" method="post">
@@ -81,7 +81,7 @@
                if($footer_crd){
                   foreach($footer_crd as $footer_crd){
                     ?>
-                                <input type="text" style="width: 100" class="form-control" name="name"
+                                <input required type="text" style="width: 100" class="form-control" name="name"
                                     value="<?php echo $footer_crd['name'] ?>">
                                 <br>
                                 <input class="btn btn-primary" type="submit" name="footer_crd" value="Update">
@@ -107,49 +107,55 @@
             </div>
             <div id="style" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="card-body">
-                <p style="text-decoration: underline;"> Color </p>
-                <?php
+                    <p style="text-decoration: underline;"> Color </p>
+                    <?php
                     $sql = "SELECT * FROM color";
                     $result = mysqli_query($connect,$sql);
                     if($result){
                         foreach($result as $color){
                             ?>
-                            <form action="backend.php" method="post">
+                    <form action="backend.php" method="post">
 
-                                primary color : <div style="width:300px;height:30px;background-color:<?php echo $color['primary']; ?>"></div>
-                                <br>
-                                <input type="color" value="<?php echo $color['primary'] ?>"name="primary">
-                                <hr>
+                        primary color : <div
+                            style="width:300px;height:30px;background-color:<?php echo $color['primary']; ?>"></div>
+                        <br>
+                        <input type="color" value="<?php echo $color['primary'] ?>" name="primary">
+                        <hr>
 
-                                secondary color : <div style="width:300px;height:30px;background-color:<?php echo $color['secondary']; ?>"></div>
-                                <br>
-                                <input type="color" value="<?php echo $color['secondary'] ?>"name="secondary">
-                                <hr>
+                        secondary color : <div
+                            style="width:300px;height:30px;background-color:<?php echo $color['secondary']; ?>"></div>
+                        <br>
+                        <input type="color" value="<?php echo $color['secondary'] ?>" name="secondary">
+                        <hr>
 
-                                danger color : <div style="width:300px;height:30px;background-color:<?php echo $color['danger']; ?>"></div>
-                                <br>
-                                <input type="color" value="<?php echo $color['danger'] ?>"name="danger">
-                                <hr>
+                        danger color : <div
+                            style="width:300px;height:30px;background-color:<?php echo $color['danger']; ?>"></div>
+                        <br>
+                        <input type="color" value="<?php echo $color['danger'] ?>" name="danger">
+                        <hr>
 
-                                success color : <div style="width:300px;height:30px;background-color:<?php echo $color['success']; ?>"></div>
-                                <br>
-                                <input type="color" value="<?php echo $color['success'] ?>"name="success">
-                                <hr>
+                        success color : <div
+                            style="width:300px;height:30px;background-color:<?php echo $color['success']; ?>"></div>
+                        <br>
+                        <input type="color" value="<?php echo $color['success'] ?>" name="success">
+                        <hr>
 
-                                warning color : <div style="width:300px;height:30px;background-color:<?php echo $color['warning']; ?>"></div>
-                                <br>
-                                <input type="color" value="<?php echo $color['warning'] ?>"name="warning">
-                                <hr>
+                        warning color : <div
+                            style="width:300px;height:30px;background-color:<?php echo $color['warning']; ?>"></div>
+                        <br>
+                        <input type="color" value="<?php echo $color['warning'] ?>" name="warning">
+                        <hr>
 
-                                info color : <div style="width:300px;height:30px;background-color:<?php echo $color['info']; ?>"></div>
-                                <br>
-                                <input type="color" value="<?php echo $color['info'] ?>"name="info">
-                                <hr>
+                        info color : <div
+                            style="width:300px;height:30px;background-color:<?php echo $color['info']; ?>"></div>
+                        <br>
+                        <input type="color" value="<?php echo $color['info'] ?>" name="info">
+                        <hr>
 
-                                <input type="submit" name="color_update" class="btn btn-primary" value="Update">
-                                
-                            </form>
-                            <?php
+                        <input type="submit" name="color_update" class="btn btn-primary" value="Update">
+
+                    </form>
+                    <?php
                         }
                     }
                 ?>
@@ -253,16 +259,17 @@
                         <label for="" class="col-md-2 control-label"> Author <span style="color:red"> * </span> :
                         </label>
                         <input name="author" type="text" class="form-control" value="<?php echo $author ?>" required>
-                        <br>  
+                        <br>
                         <label for="" class="col-md-2 control-label"> Description <span style="color:red"> * </span> :
                         </label>
-                        <textarea name="description" class="form-control" required> <?php echo $description ?> </textarea>
-                        <br>  
+                        <textarea name="description" class="form-control"
+                            required> <?php echo $description ?> </textarea>
+                        <br>
                         <label for="" class="col-md-2 control-label"> Keywords <span style="color:red"> * </span> :
                         </label>
                         <textarea name="keywords" class="form-control" required> <?php echo $keywords ?> </textarea>
-                        <br>  
-                        <input type="submit" class="btn btn-primary"name="seo" value="Update">
+                        <br>
+                        <input type="submit" class="btn btn-primary" name="seo" value="Update">
                         <?php
                  }
                }
@@ -272,74 +279,8 @@
             </div>
 
         </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#hero"
-                        aria-expanded="false" aria-controls="collapseThree">
-                        Hero Section
-                    </button>
-                </h5>
-            </div>
-            <div id="hero" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
-                </div>
-            </div>
 
-        </div>
 
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#post"
-                        aria-expanded="false" aria-controls="collapseThree">
-                        Post Configure
-                    </button>
-                </h5>
-            </div>
-            <div id="post" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
-                </div>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#alert"
-                        aria-expanded="false" aria-controls="collapseThree">
-                        Alert Box
-                    </button>
-                </h5>
-            </div>
-            <div id="alert" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
-                </div>
-            </div>
-
-        </div>
 
         <div class="card">
             <div class="card-header" id="headingThree">
@@ -445,16 +386,16 @@
                   foreach($result as $contact_address){
                     ?>
                             <form action="backend.php" method="post">
-                                <input type="phone" name="phone" placeholder="Phone" class="form-control"
+                                <input required type="phone" name="phone" placeholder="Phone" class="form-control"
                                     value="<?php echo $contact_address['phone']?>">
                                 <br>
-                                <input type="email" name="email" placeholder="Email" class="form-control"
+                                <input required type="email" name="email" placeholder="Email" class="form-control"
                                     value="<?php echo $contact_address['email']?>">
                                 <br>
-                                <textarea name="address" class="form-control" placeholder="Address"
+                                <textarea required name="address" class="form-control" placeholder="Address"
                                     rows="8"><?php echo $contact_address['address']?></textarea>
                                 <br>
-                                <textarea name="map" class="form-control" placeholder="Google Map"
+                                <textarea required name="map" class="form-control" placeholder="Google Map"
                                     rows="8"><?php echo $contact_address['map']?></textarea>
                                 <br>
                                 <input type="submit" name="update_contact_address" class="btn btn-primary"
@@ -496,7 +437,7 @@
                         <br>
                         <a href="<?php echo $r['link']?>"> <?php echo $r['link']?></a>
                     <form action="backend.php" method="post">
-                        <input type="hidden" name="id" value="<?php echo $r['id']?>" />
+                        <input required type="hidden" name="id" value="<?php echo $r['id']?>" />
                         <input type="submit" name="social_media_link_delete" value="Delete" class="btn btn-danger">
                     </form>
                     </p>
@@ -507,11 +448,11 @@
         ?>
 
                     <form action="backend.php" method="post" enctype="multipart/form-data">
-                        <input type="text" name='title' placeholder="Name" class="form-control">
+                        <input required type="text" name='title' placeholder="Name" class="form-control">
                         <br>
-                        <input type="file" name="image" class="form-control">
+                        <input required type="file" name="image" class="form-control">
                         <br>
-                        <input type="text" name="link" class="form-control" placeholder="Link">
+                        <input required type="text" name="link" class="form-control" placeholder="Link">
                         <br>
                         <input type="submit" name="create_soical_link" class="btn btn-primary" value="Create">
                     </form>
@@ -521,28 +462,6 @@
 
         </div>
 
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#membership"
-                        aria-expanded="false" aria-controls="collapseThree">
-                        Membership system
-                    </button>
-                </h5>
-            </div>
-            <div id="membership" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                    labore sustainable VHS.
-                </div>
-            </div>
-
-        </div>
     </div>
 
 

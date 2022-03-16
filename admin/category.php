@@ -59,11 +59,7 @@
                       <form action="update_category.php" method="POST" style="display:inline-block;margin-right:20px">
                          <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                          <input type="submit" class="btn btn-warning" name="update_category" value="Update">
-                        </form>  
-                        <form action="detail_category.php" method="POST" style="display:inline-block">
-                         <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                         <input type="submit" class="btn btn-info" name="category_detail" value="Detail">
-                        </form>   
+                        </form>     
                     </div>
                       
                  </td>
