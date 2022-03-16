@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2022 at 04:43 AM
+-- Generation Time: Mar 16, 2022 at 04:54 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -38,11 +38,35 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `image`) VALUES
-(3, 'War', '92_download (4).jpg'),
-(4, 'Business 1', '48_download.jpg'),
-(5, 'Technology', '89_rs4492_177531624-low.jpg'),
-(6, 'Sport', '11_download (6).jpg'),
-(8, 'Education', '45_Bg.PNG');
+(9, 'Information Technology', '94_download.jpg'),
+(10, 'Sport', '68_download (6).jpg'),
+(11, 'War', '19_download (4).jpg'),
+(12, 'Business', '61_download (5).jpg'),
+(13, 'Education', '86_1.png'),
+(14, 'KBTC University', '80_Bg.PNG');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `color`
+--
+
+CREATE TABLE `color` (
+  `id` int(11) NOT NULL,
+  `primary` varchar(255) NOT NULL DEFAULT '#007bff',
+  `secondary` varchar(255) NOT NULL DEFAULT '#6c757d',
+  `danger` varchar(255) NOT NULL DEFAULT '#dc3545',
+  `success` varchar(255) NOT NULL DEFAULT '#28a745',
+  `warning` varchar(255) NOT NULL DEFAULT '#ffc107',
+  `info` varchar(255) NOT NULL DEFAULT '#17a2b8'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `color`
+--
+
+INSERT INTO `color` (`id`, `primary`, `secondary`, `danger`, `success`, `warning`, `info`) VALUES
+(1, '#007bff', '#6c757d', '#dc3545', '#28a745', '#ffc107', '#17a2b8');
 
 -- --------------------------------------------------------
 
@@ -99,7 +123,24 @@ CREATE TABLE `footer_credit` (
 --
 
 INSERT INTO `footer_credit` (`id`, `name`) VALUES
-(1, 'Copyright © Power By Thaw Zin Soe');
+(1, 'Copyright © Love with Thaw Zin Soe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logo`
+--
+
+CREATE TABLE `logo` (
+  `logo` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `logo`
+--
+
+INSERT INTO `logo` (`logo`) VALUES
+('5_Thaw Zinlogo.jpg');
 
 -- --------------------------------------------------------
 
@@ -117,21 +158,6 @@ CREATE TABLE `post` (
   `create_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `post`
---
-
-INSERT INTO `post` (`id`, `title`, `category`, `author`, `featured_image`, `description`, `create_date`) VALUES
-(4, 'Russia Today', '3', '09403077739', '72_images.jpg', '<p>his is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniquehis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique</p><p>&nbsp;</p>', '2022-03-10'),
-(5, 'Bitcoin market crach', '4', '09403077739', '7_Doomsday Book (2012).jpg', '<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique</p><ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li><li>PHP</li><li>MySQL</li></ul>', '2022-03-10'),
-(6, 'NCC Exam', '8', '09403077739', '39_MicrosoftTeams-image (1).png', '<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique</p><p><a href=\"https://google.com\">https://google.com</a></p>', '2022-03-10'),
-(7, 'Tester 123', '6', '09403077739', '95_Bg.PNG', '<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique</p>', '2022-03-10'),
-(8, 'rrwer', '8', '09403077739', '50_wrapped_WebDeveloperThawZinSoe.png', '<p>2e423423423rwefsfwrf</p>', '2022-03-10'),
-(9, 'Hay ay', '5', '09403077739', '85_MicrosoftTeams-image (1).png', '<p>234234235345LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5</p>', '2022-03-10'),
-(10, 'ot345ioweritrtwgg', '4', '09403077739', '1_MicrosoftTeams-image (2).png', '<p>LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5LIMIT 5</p>', '2022-03-10'),
-(11, '111', '3', '09403077739', '17_MicrosoftTeams-image (2).png', '<p>111</p>', '2022-03-10'),
-(12, 'tester', '8', '09403077739', '95_58e91afdeb97430e81906504.png', '<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more uniqueThis is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique</p>', '2022-03-11');
-
 -- --------------------------------------------------------
 
 --
@@ -148,6 +174,25 @@ CREATE TABLE `post_pagination` (
 
 INSERT INTO `post_pagination` (`count`) VALUES
 (10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seo`
+--
+
+CREATE TABLE `seo` (
+  `author` varchar(225) NOT NULL,
+  `description` text NOT NULL,
+  `keywords` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `seo`
+--
+
+INSERT INTO `seo` (`author`, `description`, `keywords`) VALUES
+('Thaw Zin Soe', '  A content management system is a computer software used to manage the creation and modification of digital content. A CMS is typically used for enterprise content management and web content management  ', '  CMS ,  Thaw Zin Soe , PHP , MySQL , HTML , CSS , Bootstrap , Content Management System , Customize , Blog  , blog , blog system , Blog System  , System , system  ');
 
 -- --------------------------------------------------------
 
@@ -170,6 +215,34 @@ INSERT INTO `socail_media` (`id`, `title`, `icon`, `link`) VALUES
 (3, 'Github', '59_download.png', 'https://github.com/WebDeveloperThawZinSoe'),
 (4, 'LinkedIn', '2_58e91afdeb97430e81906504.png', 'https://www.linkedin.com/in/thaw-zin-soe-0b92b61a5/'),
 (5, 'Facebook', '69_fb_icon_325x325.png', 'https://www.facebook.com/thawzin.soe.12/');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `text_style`
+--
+
+CREATE TABLE `text_style` (
+  `id` int(11) NOT NULL,
+  `h1_style_color` varchar(255) NOT NULL,
+  `h2_style_color` varchar(255) NOT NULL,
+  `h3_style_color` varchar(255) NOT NULL,
+  `h4_style_color` varchar(255) NOT NULL,
+  `h5_style_color` varchar(255) NOT NULL,
+  `h6_style_color` varchar(255) NOT NULL,
+  `p_style_color` varchar(255) NOT NULL,
+  `a_style_color` varchar(255) NOT NULL,
+  `p_style` varchar(255) NOT NULL,
+  `body_style` varchar(255) NOT NULL,
+  `footer_style` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `text_style`
+--
+
+INSERT INTO `text_style` (`id`, `h1_style_color`, `h2_style_color`, `h3_style_color`, `h4_style_color`, `h5_style_color`, `h6_style_color`, `p_style_color`, `a_style_color`, `p_style`, `body_style`, `footer_style`) VALUES
+(1, 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'white', 'white');
 
 -- --------------------------------------------------------
 
@@ -206,6 +279,12 @@ ALTER TABLE `category`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `color`
+--
+ALTER TABLE `color`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact_address`
 --
 ALTER TABLE `contact_address`
@@ -230,6 +309,12 @@ ALTER TABLE `socail_media`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `text_style`
+--
+ALTER TABLE `text_style`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -244,7 +329,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `color`
+--
+ALTER TABLE `color`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact_address`
@@ -262,13 +353,19 @@ ALTER TABLE `footer_credit`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `socail_media`
 --
 ALTER TABLE `socail_media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `text_style`
+--
+ALTER TABLE `text_style`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
