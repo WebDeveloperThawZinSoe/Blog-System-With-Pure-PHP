@@ -1,8 +1,8 @@
 
 
-# Samll Content Management System 
+# Small Content Management System 
 
-Samll Content Management System  developed by Thaw Zin Soe.
+Small Content Management System  developed by Thaw Zin Soe.
 
 
 
