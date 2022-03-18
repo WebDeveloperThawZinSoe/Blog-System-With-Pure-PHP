@@ -1,6 +1,6 @@
 
 
-# Small Content Management System 
+# Small Content Management System ( Version 1 )
 
 Small Content Management System  developed by Thaw Zin Soe.
 
